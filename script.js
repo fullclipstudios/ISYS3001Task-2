@@ -65,6 +65,17 @@ function displayPlayers(players)
         });
 }
 
+// Event listeners on buttons
+document.getElementById('generatePlayers').addEventListener('click', () => 
+    {
+        generatePlayers();
+    });
+
+document.getElementById('matchmake').addEventListener('click', () =>
+    {
+        alert('Matchmaking feature is not yet implemented.');
+    });
+
 
 
 
