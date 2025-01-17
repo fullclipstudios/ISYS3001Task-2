@@ -48,21 +48,24 @@ function generatePlayers()
 
 
 // Display generated players
-function displayPlayers(players) 
+function displayPlayers(players)
 {
-    const onlineplayersDiv = document.getElementById('onlineplayers');
+    const onlineplayersDiv = document.getElementById('onlineplayers'); 
 
     // Clear previous list
-    playersDiv.innerHTML = ''; 
-  
+    onlineplayersDiv.innerHTML = ''; 
+
+    
     players.forEach(player =>
-      {
-          const onlineplayersDiv = document.createElement('div');
-          onlineplayersDiv.classList.add('player');
-          onlineplayersDiv.innerHTML = `Player ID: ${player.id} - Rank: ${player.rank} - Current Ping: ${player.ping}ms`;
-          onlineplayersDiv.appendChild(playerDiv);
-      });
+        {
+        const playerDiv = document.createElement('div'); 
+        playerDiv.classList.add('player');
+        playerDiv.innerHTML = `Player ID: ${player.id} - Rank: ${player.rank} - Current Ping: ${player.ping}ms`;
+        onlineplayersDiv.appendChild(playerDiv); 
+        });
 }
+
+
 
 
 
