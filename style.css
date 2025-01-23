@@ -94,6 +94,9 @@ div {
     }
 }
 
-h1 {
-  color: red;
+#heading{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    color: #ffffff;
 }
