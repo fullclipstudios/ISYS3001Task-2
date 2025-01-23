@@ -1,13 +1,14 @@
 
 
 //Player class
-class Player 
+export class Player 
 {
-    constructor(id, rank, ping) 
+    constructor(id, rank, ping, elo) 
   {
         this.id = id;
         this.rank = rank;
         this.ping = ping;
+        this.elo = elo;
   }
 }
 
@@ -22,6 +23,11 @@ function getId()
 function getPing()
 {
     return Math.floor(Math.random() * (300 - 10 + 1)) + 10;
+}
+
+function getElo()
+{
+    return Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
 }
 
 
@@ -41,7 +47,8 @@ function generatePlayers()
         const id = getId();
         const rank = getRank();
         const ping = getPing();
-        players.push(new Player(id, rank, ping));
+        const elo = getElo();
+        players.push(new Player(id, rank, ping, elo));
     }
     displayPlayers(players);
 }
@@ -60,7 +67,7 @@ function displayPlayers(players)
         {
         const playerDiv = document.createElement('div'); 
         playerDiv.classList.add('player');
-        playerDiv.innerHTML = `Player ID: ${player.id} - Rank: ${player.rank} - Current Ping: ${player.ping}ms`;
+        playerDiv.innerHTML = `Player ID: ${player.id} - Rank: ${player.rank} - Current Ping: ${player.ping}ms - Elo: ${player.elo}`;
         onlineplayersDiv.appendChild(playerDiv); 
         });
 }
