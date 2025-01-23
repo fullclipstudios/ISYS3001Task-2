@@ -3,8 +3,8 @@ class TeamGenerator {
         this.players = players;
     }
 
-    addPlayer(name, rank, isBanned = false) {
-        this.players.push({ name, rank, isBanned });
+    addPlayer(name, rank, groupSize = 1, isBanned = false) {
+        this.players.push({ name, rank, groupSize, isBanned });
     }
 
     generateTeams(teamSize) {
@@ -35,6 +35,28 @@ class TeamGenerator {
     redoMatchmaking(teamSize) {
         this.removeBannedPlayers();
         return this.generateTeams(teamSize);
+    }
+
+    pairTeamsByGroupSize(teams) {
+        const groupedTeams = {};
+        const pairedTeams = [];
+
+        for (const team of teams) {
+            const groupSize = team.length;
+            if (!groupedTeams[groupSize]) {
+                groupedTeams[groupSize] = [];
+            }
+            groupedTeams[groupSize].push(team);
+        }
+
+        for (const groupSize in groupedTeams) {
+            const group = groupedTeams[groupSize];
+            while (group.length > 1) {
+                pairedTeams.push([group.pop(), group.pop()]);
+            }
+        }
+
+        return pairedTeams;
     }
 
     clearPlayers() {
