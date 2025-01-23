@@ -1,11 +1,10 @@
 class TeamGenerator {
     constructor(players = []) {
-        this.players = players; 
+        this.players = players;
     }
 
-
-    addPlayer(player) {
-        this.players.push(player);
+    addPlayer(name, rank) {
+        this.players.push({ name, rank });
     }
 
     generateTeams(teamSize) {
@@ -13,18 +12,21 @@ class TeamGenerator {
             throw new Error("Team size must be greater than zero.");
         }
 
-
-        const shuffledPlayers = [...this.players].sort(() => Math.random() - 0.5);
+        const sortedPlayers = [...this.players].sort((a, b) => b.rank - a.rank);
         const teams = [];
 
-        while (shuffledPlayers.length > 0) {
-            teams.push(shuffledPlayers.splice(0, teamSize));
+        while (sortedPlayers.length > 0) {
+            teams.push(sortedPlayers.splice(0, teamSize));
         }
 
         return teams;
     }
 
+    sortTeamsByRank(teams) {
+        return teams.map(team => team.sort((a, b) => b.rank - a.rank));
+    }
+
     clearPlayers() {
         this.players = [];
     }
-} 
+}
