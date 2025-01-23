@@ -93,3 +93,7 @@ div {
         font-size: 14px; /* Adjust font size for smaller screens */
     }
 }
+
+h1 {
+  color: red;
+}
