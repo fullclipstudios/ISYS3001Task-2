@@ -1,7 +1,7 @@
 
 
 //Player class
-export class Player 
+ class Player 
 {
     constructor(id, rank, ping, elo) 
   {

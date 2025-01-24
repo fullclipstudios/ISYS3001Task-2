@@ -3,7 +3,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #121212; /* Dark mode background */
-            color: #ffffff; /* Text color for dark mode */
+            color: #71b4ffad; /* Text color for dark mode */
         }
 
         .border-container {
@@ -99,4 +99,13 @@ div {
     font-size: 36px;
     margin-top: 20px;
     color: #ffffff;
+}
+
+
+.rankingClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
 }
