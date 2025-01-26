@@ -1,7 +1,7 @@
 
 
 //Player class
- class Player 
+class Player 
 {
     constructor(id, rank, ping, elo) 
   {
@@ -11,7 +11,6 @@
         this.elo = elo;
   }
 }
-
 
 //Player random 6 digit ID generation
 function getId() 
@@ -53,7 +52,6 @@ function generatePlayers()
     displayPlayers(players);
 }
 
-
 // Display generated players
 function displayPlayers(players)
 {
@@ -83,6 +81,16 @@ document.getElementById('matchmake').addEventListener('click', () =>
         alert('Matchmaking feature is not yet implemented.');
     });
 
+document.getElementById('generateTeams').addEventListener('click', () =>
+    {
+        alert('Generate Teams feature is not yet implemented.');
+    });
+
+document.getElementById('RegenerateTeams').addEventListener('click', () =>
+    {
+        alert('Regenerate Teams feature is not yet implemented.');
+    });
+    
 
 
 
