@@ -57,7 +57,7 @@ function displayTopPlayers(players) {
     const container = document.getElementById('leaderboard');
     container.innerHTML = ''; //clear previous leaderboard
     const list = document.createElement('div');
- 
+ //display the top 10 players
     players.forEach((player, index) => {
         const listItem = document.createElement('ol'); //code updated - li to ol
         listItem.innerHTML = `
