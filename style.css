@@ -43,6 +43,16 @@ input[type="radio"] {
     }
 }
 
+/* Buttons cursor's style */
+#rankPlayersBtn,
+#generatePlayers,
+#matchmake,
+#generateTeams,
+#RegenerateTeams {
+    cursor: pointer;
+}
+
+
  /* Style for the Output Field */
 #output {
     width: 90%; /* Responsive width */
@@ -97,20 +107,15 @@ margin-top: 20px;
 #resetBtn {
 width: 90%; /* Full width on smaller devices */
 font-size: 14px; /* Adjust font size for smaller screens */
-}
+    }
 }
 
-#heading{
+/* heading class style */
+.heading{
 text-align: center;
 font-size: 36px;
 margin-top: 20px;
-color: #ffffff;
-}
-
-.rankingClass{
+color: #71b4ff;
 display: flex;
 justify-content: center;
-align-items: center;
-margin-top: 20px;
-text-align: center;
 }
