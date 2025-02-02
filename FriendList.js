@@ -1,6 +1,8 @@
 class FriendsList {
     constructor() {
         this.friends = {};
+        this.blocked = {};
+        this.avoided = {};
     }
 
     addFriend(player, friend) {
@@ -34,7 +36,26 @@ class FriendsList {
     isBlocked(player, blockedPlayer) {
         return this.blocked[player]?.has(blockedPlayer) || false;
     }
-    
+
+        avoidPlayer(player, avoidedPlayer) {
+        if (!this.avoided[player]) {
+            this.avoided[player] = new Map();
+        }
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 7);
+        this.avoided[player].set(avoidedPlayer, expirationDate);
+    }
+
+    isAvoided(player, avoidedPlayer) {
+        if (!this.avoided[player]?.has(avoidedPlayer)) return false;
+        const expirationDate = this.avoided[player].get(avoidedPlayer);
+        if (new Date() > expirationDate) {
+            this.avoided[player].delete(avoidedPlayer);
+            return false;
+        }
+        return true;
+    }
+
     getFriends(player) {
         return this.friends[player] ? Array.from(this.friends[player]) : [];
     }
