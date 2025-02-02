@@ -23,6 +23,18 @@ class FriendsList {
         return this.friends[player]?.has(friend) || false;
     }
 
+
+    blockPlayer(player, blockedPlayer) {
+        if (!this.blocked[player]) {
+            this.blocked[player] = new Set();
+        }
+        this.blocked[player].add(blockedPlayer);
+    }
+
+    isBlocked(player, blockedPlayer) {
+        return this.blocked[player]?.has(blockedPlayer) || false;
+    }
+    
     getFriends(player) {
         return this.friends[player] ? Array.from(this.friends[player]) : [];
     }
