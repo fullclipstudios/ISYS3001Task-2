@@ -3,6 +3,8 @@ class FriendsList {
         this.friends = {};
         this.blocked = {};
         this.avoided = {};
+        this.recentlyPlayed = {};
+        this.recentMatchLimit = 10;
     }
 
     addFriend(player, friend) {
