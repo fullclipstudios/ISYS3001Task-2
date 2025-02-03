@@ -42,7 +42,8 @@ function createAndRankPlayers() {
     });
 
     // Sort players by Elo (descending order)
-    const rankedPlayers = players.sort((a, b) => b.elo - a.elo);
+    const rankedPlayers = players.filter(player => typeof player.elo === 'number').sort((a, b) => b.elo - a.elo); //code updated
+
 
     // Get top 10 players
     const top10 = rankedPlayers.slice(0, 10);
@@ -54,11 +55,11 @@ function createAndRankPlayers() {
 // Display top 10 players
 function displayTopPlayers(players) {
     const container = document.getElementById('leaderboard');
-    
+    container.innerHTML = ''; //clear previous leaderboard
     const list = document.createElement('div');
  //display the top 10 players
     players.forEach((player, index) => {
-        const listItem = document.createElement('li');
+        const listItem = document.createElement('ol'); //code updated - li to ol
         listItem.innerHTML = `
             <span class="name">${index + 1}. </span>
             <span class="id">ID: ${player.id}</span>
@@ -72,4 +73,5 @@ function displayTopPlayers(players) {
 }
 
 // Initialize when rank players is clicked
-document.getElementById('rankPlayers').addEventListener('click', createAndRankPlayers);
+document.getElementById('rankPlayersBtn').addEventListener('click', createAndRankPlayers); //changed - (rankPlayersBtn)
+
