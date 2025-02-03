@@ -119,3 +119,11 @@ color: #71b4ff;
 display: flex;
 justify-content: center;
 }
+
+
+.chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff9800;
+}
