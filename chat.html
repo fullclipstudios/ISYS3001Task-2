@@ -7,7 +7,39 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Chat Room</h1>
+    <h1 class="chat">Chat Room</h1>
     <p class="chat">Meet your online friends and chat here</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+    <button class="chat">Join Chat</button>
+    <button class="chat">Leave Chat</button>
+    <button class="chat"> <a href="./index.html" style="text-decoration: none;"> Back to Home</a></button>
+   </div>
+<div>
+    <div class="chat-box">
+        <div class="chat-box-header">
+            <p style="color: brown; font-weight: bold; position : absolute; top: 18%; right: 48%;">Chat Box</p>
+        </div>
+        <div class="chat-box-body">
+            <div class="message">
+                <span>Brock : </span>
+                <span>Howdy</span>
+            </div>
+            <div class="message">
+                <span>Denlee :</span>
+                <span>Hey Guys wassup</span>
+            </div>
+            <div class="message">
+                <span>James : </span>
+                <span>Howdy team</span>
+            </div>
+        </div>
+        <div class="chat-box-footer">
+            <input type="text" placeholder="Type your message here">
+            <button id="chatButton">Send</button>
+        </div>
+    </div>
+</div>
+
+<script src="chat.js"></script>
 </body>
 </html>

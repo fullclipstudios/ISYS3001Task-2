@@ -91,7 +91,10 @@ document.getElementById('RegenerateTeams').addEventListener('click', () =>
         alert('Regenerate Teams feature is not yet implemented.');
     });
     
-
+    document.getElementById('chatButton').addEventListener('click', () =>
+        {
+            alert('Generate Teams feature is not yet implemented.');
+        });
 
 
 
