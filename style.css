@@ -44,6 +44,7 @@ input[type="radio"] {
 }
 
 /* Buttons cursor's style */
+#player-profile
 #rankPlayersBtn,
 #generatePlayers,
 #matchmake,
@@ -68,8 +69,8 @@ input[type="radio"] {
     box-sizing: border-box; /* Prevent padding from affecting size */
 }
 
-/* Styles for the 3 buttons */
-.viewRankingBtn, .homeBtn a, #rankPlayersBtn {
+/* Styles for the 4 buttons */
+.viewRankingBtn, .homeBtn a, #rankPlayersBtn, .viewProfileBtn {
     text-decoration: none; /* Remove the underline */
     color: #121212; /* Text color */
 }

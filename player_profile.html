@@ -1,0 +1,38 @@
+<!-- player_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Player Profile</title>
+</head>
+<body>
+    <h1 class="heading">Player Profile</h1>
+    
+    <div>
+        <button id="backHome"><a href="index.html" class="viewRankingBtn">Back to Home</a></button>
+    </div>
+
+    <div id="playerProfile" class="border-container">
+        <h2>Player Details</h2>
+        <p><strong>Player ID:</strong> <span id="playerId"></span></p>
+        <p><strong>Rank:</strong> <span id="playerRank"></span></p>
+        <p><strong>Ping:</strong> <span id="playerPing"></span> ms</p>
+        <p><strong>Elo:</strong> <span id="playerElo"></span></p>
+    </div>
+    
+    <script>
+        // Generate a single player's profile details
+        function generatePlayerProfile() {
+            document.getElementById('playerId').textContent = Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('playerRank').textContent = ['Rookie', 'Bronze', 'Silver', 'Gold', 'Master'][Math.floor(Math.random() * 5)];
+            document.getElementById('playerPing').textContent = Math.floor(Math.random() * (300 - 10 + 1)) + 10;
+            document.getElementById('playerElo').textContent = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
+        }
+
+        // Call function when page loads
+        window.onload = generatePlayerProfile;
+    </script>
+</body>
+</html>
