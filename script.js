@@ -90,6 +90,18 @@ document.getElementById('RegenerateTeams').addEventListener('click', () =>
     {
         alert('Regenerate Teams feature is not yet implemented.');
     });
+
+
+// Generate a single player's profile details
+function generatePlayerProfile() {
+    document.getElementById('playerId').textContent = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById('playerRank').textContent = ['Rookie', 'Bronze', 'Silver', 'Gold', 'Master'][Math.floor(Math.random() * 5)];
+    document.getElementById('playerPing').textContent = Math.floor(Math.random() * (300 - 10 + 1)) + 10;
+    document.getElementById('playerElo').textContent = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
+}
+
+// Call function when page loads
+window.onload = generatePlayerProfile;
     
 
 
