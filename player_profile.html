@@ -1,4 +1,3 @@
-<!-- player_profile.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,9 @@
         <p><strong>Rank:</strong> <span id="playerRank"></span></p>
         <p><strong>Ping:</strong> <span id="playerPing"></span> ms</p>
         <p><strong>Elo:</strong> <span id="playerElo"></span></p>
+        
+        <!-- Generate Profile Button -->
+        <button id="generateProfile" class="generate-profile-btn">Generate Profile</button>
     </div>
     
     <script>
@@ -33,6 +35,9 @@
 
         // Call function when page loads
         window.onload = generatePlayerProfile;
+
+        // Add event listener for the Generate Profile button
+        document.getElementById('generateProfile').addEventListener('click', generatePlayerProfile);
     </script>
 </body>
 </html>
